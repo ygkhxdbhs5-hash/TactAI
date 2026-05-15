@@ -2,18 +2,33 @@
 Main execution script for Tactical Eye highlight generator
 Orchestrates detection, tracking, analysis, and export pipeline
 """
+import cv2
+import yaml
+import logging
 import sys
 import os
 from pathlib import Path
+from tqdm import tqdm
+from typing import Dict, List
 
-# 기존의 from src.detector import ... 부분을 아래처럼 수정
-from detector import TacticalDetector
-from perspective import PerspectiveTransformer
-from tactical_overlay import TacticalOverlay
-from event_detection import EventDetector
-from video_export import VideoExporter
+# 파일들이 모두 같은 위치(root)에 있으므로 직접 import 합니다.
+try:
+    from detector import TacticalDetector
+    from perspective import PerspectiveTransformer
+    from tactical_overlay import TacticalOverlay
+    from event_detection import EventDetector
+    from video_export import VideoExporter
+    # 만약 다른 파일에서 utils를 참조한다면 해당 파일들도 수정이 필요할 수 있습니다.
+except ImportError as e:
+    logging.error(f"Import failed: {e}")
+    # 현재 경로를 시스템 경로에 강제로 추가 (보험용)
+    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+    from detector import TacticalDetector
+    from perspective import PerspectiveTransformer
+    from tactical_overlay import TacticalOverlay
+    from event_detection import EventDetector
+    from video_export import VideoExporter
 
-# (나머지 코드 동일)
 
 
 
