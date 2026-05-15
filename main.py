@@ -4,13 +4,17 @@ Orchestrates detection, tracking, analysis, and export pipeline
 """
 import sys
 import os
+from pathlib import Path
 
-# 수정 후 import 문
+# 기존의 from src.detector import ... 부분을 아래처럼 수정
 from detector import TacticalDetector
 from perspective import PerspectiveTransformer
 from tactical_overlay import TacticalOverlay
 from event_detection import EventDetector
 from video_export import VideoExporter
+
+# (나머지 코드 동일)
+
 
 
 import cv2
