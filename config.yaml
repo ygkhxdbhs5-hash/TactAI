@@ -1,0 +1,38 @@
+# Tactical Eye Configuration
+
+detection:
+  model: "yolov8n.pt"  # Options: yolov8n, yolov8s, yolov8m, yolov8l, yolov8x
+  conf_threshold: 0.5
+  iou_threshold: 0.45
+  device: "0"  # GPU device ID or "cpu"
+
+team_classification:
+  kmeans_clusters: 2
+  color_space: "hsv"  # Options: hsv, lab, rgb
+  min_cluster_size: 5
+
+perspective:
+  pitch_length: 105  # meters
+  pitch_width: 68    # meters
+  output_width: 1050  # pixels (10x scale)
+  output_height: 680  # pixels (10x scale)
+
+tactical:
+  line_thickness: 2
+  centroid_radius: 8
+  hull_alpha: 0.3
+  text_scale: 0.6
+
+event_detection:
+  high_pressing_threshold: 0.5  # Distance threshold for players near ball
+  min_players_pressing: 3
+  transition_time_window: 2     # seconds
+  min_event_duration: 1         # seconds
+
+video_export:
+  output_fps: 30
+  slowmo_factor: 0.5  # 0.5 = 2x slowmo
+  shot_slowmo_duration: 2.0  # seconds
+  output_format: "mp4"
+  codec: "mp4v"
+  quality: "high"  # Options: low, medium, high
