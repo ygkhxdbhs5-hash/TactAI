@@ -4,15 +4,14 @@ Orchestrates detection, tracking, analysis, and export pipeline
 """
 import sys
 import os
-from pathlib import Path
 
-# 현재 파일(main.py)이 있는 위치를 시스템 경로에 추가
-current_dir = Path(__file__).parent.absolute()
-sys.path.append(str(current_dir))
+# 수정 후 import 문
+from detector import TacticalDetector
+from perspective import PerspectiveTransformer
+from tactical_overlay import TacticalOverlay
+from event_detection import EventDetector
+from video_export import VideoExporter
 
-# 이제 기존 import 문들이 실행됩니다
-from src.detector import TacticalDetector
-# ... 나머지 import
 
 import cv2
 import yaml
