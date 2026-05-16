@@ -2,6 +2,10 @@
 Main execution script for Tactical Eye highlight generator
 Orchestrates detection, tracking, analysis, and export pipeline
 """
+import os
+os.makedirs('outputs/logs', exist_ok=True)
+os.makedirs('outputs/highlights', exist_ok=True)
+
 import cv2
 import yaml
 import logging
