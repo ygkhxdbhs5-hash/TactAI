@@ -43,11 +43,11 @@ from pathlib import Path
 from tqdm import tqdm
 from typing import Dict, List
 
-from src.detector import TacticalDetector
-from src.perspective import PerspectiveTransformer
-from src.tactical_overlay import TacticalOverlay
-from src.event_detection import EventDetector
-from src.video_export import VideoExporter
+from detector import TacticalDetector
+from perspective import PerspectiveTransformer
+from tactical_overlay import TacticalOverlay
+from event_detection import EventDetector
+from video_export import VideoExporter
 
 # Configure logging
 logging.basicConfig(
